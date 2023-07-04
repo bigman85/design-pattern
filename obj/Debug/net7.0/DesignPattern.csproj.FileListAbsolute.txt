@@ -1,0 +1,15 @@
+/home/uncletall/exercise/dotnet/DesignPattern/obj/Debug/net7.0/DesignPattern.csproj.AssemblyReference.cache
+/home/uncletall/exercise/dotnet/DesignPattern/obj/Debug/net7.0/DesignPattern.GeneratedMSBuildEditorConfig.editorconfig
+/home/uncletall/exercise/dotnet/DesignPattern/obj/Debug/net7.0/DesignPattern.AssemblyInfoInputs.cache
+/home/uncletall/exercise/dotnet/DesignPattern/obj/Debug/net7.0/DesignPattern.AssemblyInfo.cs
+/home/uncletall/exercise/dotnet/DesignPattern/obj/Debug/net7.0/DesignPattern.csproj.CoreCompileInputs.cache
+/home/uncletall/exercise/dotnet/DesignPattern/bin/Debug/net7.0/DesignPattern
+/home/uncletall/exercise/dotnet/DesignPattern/bin/Debug/net7.0/DesignPattern.deps.json
+/home/uncletall/exercise/dotnet/DesignPattern/bin/Debug/net7.0/DesignPattern.runtimeconfig.json
+/home/uncletall/exercise/dotnet/DesignPattern/bin/Debug/net7.0/DesignPattern.dll
+/home/uncletall/exercise/dotnet/DesignPattern/bin/Debug/net7.0/DesignPattern.pdb
+/home/uncletall/exercise/dotnet/DesignPattern/obj/Debug/net7.0/DesignPattern.dll
+/home/uncletall/exercise/dotnet/DesignPattern/obj/Debug/net7.0/refint/DesignPattern.dll
+/home/uncletall/exercise/dotnet/DesignPattern/obj/Debug/net7.0/DesignPattern.pdb
+/home/uncletall/exercise/dotnet/DesignPattern/obj/Debug/net7.0/DesignPattern.genruntimeconfig.cache
+/home/uncletall/exercise/dotnet/DesignPattern/obj/Debug/net7.0/ref/DesignPattern.dll
