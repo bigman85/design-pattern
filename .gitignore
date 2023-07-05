@@ -3,3 +3,4 @@ obj/
 bin/
 .vs/
 .vscode/
+/obj/Debug/net7.0/DesignPattern.GeneratedMSBuildEditorConfig.editorconfig
