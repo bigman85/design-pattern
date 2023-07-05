@@ -9,6 +9,22 @@ Console.WriteLine("DesignPattern-CreationalPattern-SimpleFactory --END--");
 Console.WriteLine();
 #endregion
 
+#region Factory Pattern
+Console.WriteLine("DesignPattern-CreationalPattern-Factory");
+DesignPattern.Factory.IFactory factory = new DesignPattern.Factory.FactoryA();
+DesignPattern.Factory.IProduct product = factory.CreateProduct();
+product.Display();
+Console.WriteLine("DesignPattern-CreationalPattern-Factory --END--");
+Console.WriteLine();
+#endregion
+
+#region Singleton Pattern
+Console.WriteLine("DesignPattern-CreationalPattern-Singleton");
+DesignPattern.Singleton.SingletonPattern singletonPattern = DesignPattern.Singleton.SingletonPattern.getInstance();
+singletonPattern.Display();
+Console.WriteLine("DesignPattern-CreationalPattern-Singleton --END--");
+Console.WriteLine();
+#endregion
 
 #region Strategy Pattern
 Console.WriteLine("DesignPattern-BehaviorPattern-Strategy");
