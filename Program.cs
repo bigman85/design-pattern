@@ -1,26 +1,39 @@
-﻿using Microsoft.VisualBasic.CompilerServices;
-// See https://aka.ms/new-console-template for more information
+﻿// See https://aka.ms/new-console-template for more information
+
 #region Simple Factory Pattern
 Console.WriteLine("DesignPattern-CreationalPattern-SimpleFactory");
-DesignPattern.SimpleFactory.OperatorFactory simpleFactory = new DesignPattern.SimpleFactory.OperatorFactory();
-DesignPattern.SimpleFactory.IOperator simpleOperator = simpleFactory.GetOperator("+"); // operator: + - * /
-Console.WriteLine($" 1 + 2 = {simpleOperator.GetResult(1,2)}");
+DesignPattern.CreationalPattern.SimpleFactory.OperatorFactory simpleFactory = new DesignPattern.CreationalPattern.SimpleFactory.OperatorFactory();
+DesignPattern.CreationalPattern.SimpleFactory.IOperator simpleOperator = simpleFactory.GetOperator("+"); // operator: + - * /
+Console.WriteLine($" 1 + 2 = {simpleOperator.GetResult(1, 2)}");
 Console.WriteLine("DesignPattern-CreationalPattern-SimpleFactory --END--");
 Console.WriteLine();
 #endregion
 
 #region Factory Pattern
 Console.WriteLine("DesignPattern-CreationalPattern-Factory");
-DesignPattern.Factory.IFactory factory = new DesignPattern.Factory.FactoryA();
-DesignPattern.Factory.IProduct product = factory.CreateProduct();
+DesignPattern.CreationalPattern.Factory.IFactory factory = new DesignPattern.CreationalPattern.Factory.FactoryA();
+DesignPattern.CreationalPattern.Factory.IProduct product = factory.CreateProduct();
 product.Display();
 Console.WriteLine("DesignPattern-CreationalPattern-Factory --END--");
 Console.WriteLine();
 #endregion
 
+#region AbstractFactory Pattern
+Console.WriteLine("DesignPattern-CreationalPattern-AbstractFactory");
+
+DesignPattern.CreationalPattern.AbstractFactory.AbstractFactory shapeFactory = DesignPattern.CreationalPattern.AbstractFactory.FactoryProducer.getFactory("SHAPE");
+DesignPattern.CreationalPattern.AbstractFactory.AbstractFactory colorFactory = DesignPattern.CreationalPattern.AbstractFactory.FactoryProducer.getFactory("COLOR");
+DesignPattern.CreationalPattern.AbstractFactory.IShape shape = shapeFactory.getShape("Rectangle");
+DesignPattern.CreationalPattern.AbstractFactory.IColor color = colorFactory.getColor("Red");
+shape.Draw();
+color.Fill();
+Console.WriteLine("DesignPattern-CreationalPattern-AbstractFactory --END--");
+Console.WriteLine();
+#endregion
+
 #region Singleton Pattern
 Console.WriteLine("DesignPattern-CreationalPattern-Singleton");
-DesignPattern.Singleton.SingletonPattern singletonPattern = DesignPattern.Singleton.SingletonPattern.getInstance();
+DesignPattern.CreationalPattern.Singleton.SingletonPattern singletonPattern = DesignPattern.CreationalPattern.Singleton.SingletonPattern.getInstance();
 singletonPattern.Display();
 Console.WriteLine("DesignPattern-CreationalPattern-Singleton --END--");
 Console.WriteLine();
@@ -28,7 +41,7 @@ Console.WriteLine();
 
 #region Strategy Pattern
 Console.WriteLine("DesignPattern-BehaviorPattern-Strategy");
-DesignPattern.Strategy.Context strategyContext = new DesignPattern.Strategy.Context(new DesignPattern.Strategy.ConcreteStrategyA());
+DesignPattern.BehaviorPattern.Strategy.Context strategyContext = new DesignPattern.BehaviorPattern.Strategy.Context(new DesignPattern.BehaviorPattern.Strategy.ConcreteStrategyA());
 strategyContext.ContextInterface();
 Console.WriteLine("DesignPattern-BehaviorPattern-Strategy --END--");
 Console.WriteLine();
@@ -36,9 +49,9 @@ Console.WriteLine();
 
 #region Decorator Pattern
 Console.WriteLine("DesignPattern-StructuralPattern-Strategy");
-DesignPattern.Decorator.ConcreteComponent concreteComponent = new DesignPattern.Decorator.ConcreteComponent();
-DesignPattern.Decorator.ConcreteDecoratorA concreteDecoratorA = new DesignPattern.Decorator.ConcreteDecoratorA();
-DesignPattern.Decorator.ConcreteDecoratorB concreteDecoratorB = new DesignPattern.Decorator.ConcreteDecoratorB();
+DesignPattern.StructuralPattern.Decorator.ConcreteComponent concreteComponent = new DesignPattern.StructuralPattern.Decorator.ConcreteComponent();
+DesignPattern.StructuralPattern.Decorator.ConcreteDecoratorA concreteDecoratorA = new DesignPattern.StructuralPattern.Decorator.ConcreteDecoratorA();
+DesignPattern.StructuralPattern.Decorator.ConcreteDecoratorB concreteDecoratorB = new DesignPattern.StructuralPattern.Decorator.ConcreteDecoratorB();
 
 concreteDecoratorA.SetComponent(concreteComponent);
 concreteDecoratorB.SetComponent(concreteDecoratorA);

@@ -1,6 +1,6 @@
-namespace DesignPattern.Decorator
+namespace DesignPattern.StructuralPattern.Decorator
 {
-    public class ConcreteDecoratorB:Decorator
+    public class ConcreteDecoratorB : Decorator
     {
 
         public override void Operation()

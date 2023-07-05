@@ -1,4 +1,4 @@
-namespace DesignPattern.Singleton
+namespace DesignPattern.CreationalPattern.Singleton
 {
     public class SingletonPattern
     {

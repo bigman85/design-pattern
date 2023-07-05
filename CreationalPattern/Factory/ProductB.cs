@@ -1,11 +1,4 @@
-﻿using DesignPattern.Factory;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DesignPattern.Factory
+﻿namespace DesignPattern.CreationalPattern.Factory
 {
     internal class ProductB : IProduct
     {

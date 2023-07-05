@@ -1,4 +1,4 @@
-namespace DesignPattern.SimpleFactory
+namespace DesignPattern.CreationalPattern.SimpleFactory
 {
     public class OperatorFactory
     {

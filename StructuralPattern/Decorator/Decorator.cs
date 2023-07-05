@@ -1,4 +1,4 @@
-namespace DesignPattern.Decorator
+namespace DesignPattern.StructuralPattern.Decorator
 {
     public abstract class Decorator : Component
     {
@@ -11,7 +11,7 @@ namespace DesignPattern.Decorator
 
         public override void Operation()
         {
-            if(component != null)
+            if (component != null)
             {
                 component.Operation();
             }

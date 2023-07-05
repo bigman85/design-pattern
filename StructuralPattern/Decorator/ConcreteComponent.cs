@@ -1,8 +1,6 @@
-using System;
-using System.ComponentModel;
-namespace DesignPattern.Decorator
+namespace DesignPattern.StructuralPattern.Decorator
 {
-    public class ConcreteComponent: Component
+    public class ConcreteComponent : Component
     {
         public override void Operation()
         {

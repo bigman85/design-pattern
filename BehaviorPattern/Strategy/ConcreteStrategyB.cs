@@ -1,4 +1,4 @@
-namespace DesignPattern.Strategy
+namespace DesignPattern.BehaviorPattern.Strategy
 {
     public class ConcreteStrategyB : Strategy
     {

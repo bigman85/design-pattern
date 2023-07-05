@@ -1,17 +1,17 @@
-namespace DesignPattern.Decorator
+namespace DesignPattern.StructuralPattern.Decorator
 {
-    public class ConcreteDecoratorA:Decorator
+    public class ConcreteDecoratorA : Decorator
     {
         private string addedState;
         public ConcreteDecoratorA()
         {
-            addedState = "New State";            
+            addedState = "New State";
         }
 
         public override void Operation()
         {
             base.Operation();
-            Console.WriteLine($"Operation of Concrete Decorator A, with addedState = { addedState }");
+            Console.WriteLine($"Operation of Concrete Decorator A, with addedState = {addedState}");
         }
     }
 }
