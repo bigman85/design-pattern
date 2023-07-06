@@ -2,7 +2,7 @@ namespace DesignPattern.StructuralPattern.Proxy
 {
     public class Proxy : IService
     {
-        private Service service;
+        private Service? service;
         public void Method1()
         {
             if (service == null)

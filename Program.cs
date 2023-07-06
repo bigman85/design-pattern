@@ -96,3 +96,21 @@ cb.TemplateMethod();
 Console.WriteLine("DesignPattern-StructuralPattern-TemplateMethod --END--");
 Console.WriteLine();
 #endregion
+
+#region Adapter Pattern
+Console.WriteLine("DesignPattern-StructuralPattern-Adapter");
+DesignPattern.StructuralPattern.Adapter.Target target = new DesignPattern.StructuralPattern.Adapter.Adapter();
+target.Request();
+Console.WriteLine("DesignPattern-StructuralPattern-Adapter --END--");
+Console.WriteLine();
+#endregion
+
+
+#region Facade Pattern
+Console.WriteLine("DesignPattern-StructuralPattern-Facade");
+DesignPattern.StructuralPattern.Facade.FacadeClass facade = new DesignPattern.StructuralPattern.Facade.FacadeClass();
+facade.MethodA();
+facade.MethodB();
+Console.WriteLine("DesignPattern-StructuralPattern-Facade --END--");
+Console.WriteLine();
+#endregion
