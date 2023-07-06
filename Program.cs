@@ -55,7 +55,7 @@ Console.WriteLine("Person1 is ");
 Console.WriteLine(person1.ToString());
 var person2 = person1.Clone() as DesignPattern.CreationalPattern.Prototype.Person;
 Console.WriteLine("Cloned Person2 is ");
-Console.WriteLine(person2.ToString());
+Console.WriteLine(person2?.ToString());
 Console.WriteLine("DesignPattern-CreationalPattern-Prototype --END--");
 Console.WriteLine();
 #endregion
@@ -85,5 +85,14 @@ Console.WriteLine("DesignPattern-StructuralPattern-Proxy");
 DesignPattern.StructuralPattern.Proxy.IService proxy = new DesignPattern.StructuralPattern.Proxy.Proxy();
 proxy.Method1();
 Console.WriteLine("DesignPattern-StructuralPattern-Proxy --END--");
+Console.WriteLine();
+#endregion
+
+
+#region Template Method Pattern
+Console.WriteLine("DesignPattern-StructuralPattern-TemplateMethod");
+DesignPattern.BehaviorPattern.TemplateMethod.AbstractClass cb = new DesignPattern.BehaviorPattern.TemplateMethod.ConcreteClassB();
+cb.TemplateMethod();
+Console.WriteLine("DesignPattern-StructuralPattern-TemplateMethod --END--");
 Console.WriteLine();
 #endregion
