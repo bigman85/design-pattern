@@ -96,3 +96,19 @@ circle.Draw();
 Console.WriteLine("DesignPattern-StructuralPattern-Bridge --END--");
 Console.WriteLine();
 #endregion
+
+#region FlyWeight Pattern
+Console.WriteLine("DesignPattern-StructuralPattern-FlyWeight");
+string[] colors = { "Red", "Green", "Blue", "White", "Black" };
+for (int i = 0; i < 20; i++)
+{
+    string tmpColor = colors[Random.Shared.Next(0, colors.Length)];
+    var tmpCircle = DesignPattern.StructuralPattern.FlyWeight.ShapeFactory.GetShape(tmpColor);
+    tmpCircle.Radius = Random.Shared.Next(10,100);
+    tmpCircle.x = Random.Shared.Next(0, 1024);
+    tmpCircle.y = Random.Shared.Next(0, 1024);
+    tmpCircle.Draw();
+}
+Console.WriteLine("DesignPattern-StructuralPattern-FlyWeight --END--");
+Console.WriteLine();
+#endregion
