@@ -128,3 +128,22 @@ firstStepHandler.Handle("#REQUEST#");
 Console.WriteLine("DesignPattern-BehaviorPattern-ChainOfResponsibility --END--");
 Console.WriteLine();
 #endregion
+
+#region Command Pattern
+Console.WriteLine("DesignPattern-BehaviorPattern-Command");
+DesignPattern.BehaviorPattern.Command.Stock stock = new();
+DesignPattern.BehaviorPattern.Command.BuyOrder buyOrder = new(stock);
+DesignPattern.BehaviorPattern.Command.SellOrder sellOrder = new(stock);
+DesignPattern.BehaviorPattern.Command.Broker broker = new();
+
+broker.TakeOrder(buyOrder);
+broker.TakeOrder(buyOrder);
+broker.TakeOrder(sellOrder);
+broker.TakeOrder(buyOrder);
+broker.TakeOrder(sellOrder);
+
+broker.PlaceOrders();
+
+Console.WriteLine("DesignPattern-BehaviorPattern-Command --END--");
+Console.WriteLine();
+#endregion
