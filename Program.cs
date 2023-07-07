@@ -112,3 +112,19 @@ for (int i = 0; i < 20; i++)
 Console.WriteLine("DesignPattern-StructuralPattern-FlyWeight --END--");
 Console.WriteLine();
 #endregion
+
+
+#region Composite Pattern
+Console.WriteLine("DesignPattern-StructuralPattern-Composite");
+DesignPattern.StructuralPattern.Composite.Directory dirRoot = new DesignPattern.StructuralPattern.Composite.Directory("root");
+dirRoot.AddChild(new DesignPattern.StructuralPattern.Composite.File("fileLv1-1"));
+dirRoot.AddChild(new DesignPattern.StructuralPattern.Composite.File("fileLv1-2"));
+DesignPattern.StructuralPattern.Composite.Directory dirLv1 = new DesignPattern.StructuralPattern.Composite.Directory("dirLv1-1");
+dirLv1.AddChild(new DesignPattern.StructuralPattern.Composite.File("fileLv2-1"));
+dirLv1.AddChild(new DesignPattern.StructuralPattern.Composite.File("fileLv2-2"));
+dirRoot.AddChild(dirLv1);
+
+dirRoot.Info();
+Console.WriteLine("DesignPattern-StructuralPattern-Composite --END--");
+Console.WriteLine();
+#endregion
