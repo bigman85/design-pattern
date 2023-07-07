@@ -147,3 +147,21 @@ broker.PlaceOrders();
 Console.WriteLine("DesignPattern-BehaviorPattern-Command --END--");
 Console.WriteLine();
 #endregion
+
+#region Memento Pattern
+Console.WriteLine("DesignPattern-BehaviorPattern-Memento");
+DesignPattern.BehaviorPattern.Memento.Originator originator = new();
+originator.State = "ON";
+originator.Show();
+
+DesignPattern.BehaviorPattern.Memento.Caretaker caretaker = new();
+caretaker.memento = originator.CreateMemento();
+
+originator.State = "OFF";
+originator.Show();
+
+originator.SetMemento(caretaker.memento);
+originator.Show();
+Console.WriteLine("DesignPattern-BehaviorPattern-Memento --END--");
+Console.WriteLine();
+#endregion
