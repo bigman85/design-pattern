@@ -114,3 +114,17 @@ facade.MethodB();
 Console.WriteLine("DesignPattern-StructuralPattern-Facade --END--");
 Console.WriteLine();
 #endregion
+
+#region Facade Pattern
+Console.WriteLine("DesignPattern-BehaviorPattern-ChainOfResponsibility");
+DesignPattern.BehaviorPattern.ChainOfResponsibility.FirstStepHandler firstStepHandler = new();
+DesignPattern.BehaviorPattern.ChainOfResponsibility.SecondStepHandler secondStepHandler = new();
+DesignPattern.BehaviorPattern.ChainOfResponsibility.ThridStepHandler thridStepHandler = new();
+
+firstStepHandler.NextHandler = secondStepHandler;
+secondStepHandler.NextHandler = thridStepHandler;
+
+firstStepHandler.Handle("#REQUEST#");
+Console.WriteLine("DesignPattern-BehaviorPattern-ChainOfResponsibility --END--");
+Console.WriteLine();
+#endregion
