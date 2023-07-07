@@ -159,9 +159,23 @@ caretaker.memento = originator.CreateMemento();
 
 originator.State = "OFF";
 originator.Show();
-
+ 
 originator.SetMemento(caretaker.memento);
 originator.Show();
 Console.WriteLine("DesignPattern-BehaviorPattern-Memento --END--");
 Console.WriteLine();
+#endregion
+
+
+
+#region State Pattern
+Console.WriteLine("DesignPattern-BehaviorPattern-State");
+DesignPattern.BehaviorPattern.State.Context context = new ();
+DesignPattern.BehaviorPattern.State.StartState startState = new();
+startState.DoAction(context);
+Console.WriteLine(context.State);
+
+DesignPattern.BehaviorPattern.State.StopState stopState = new();
+stopState.DoAction(context);
+Console.WriteLine(context.State);
 #endregion
