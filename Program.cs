@@ -87,3 +87,12 @@ proxy.Method1();
 Console.WriteLine("DesignPattern-StructuralPattern-Proxy --END--");
 Console.WriteLine();
 #endregion
+
+#region Bridge Pattern
+Console.WriteLine("DesignPattern-StructuralPattern-Bridge");
+DesignPattern.StructuralPattern.Bridge.Shape circle = new DesignPattern.StructuralPattern.Bridge.Circle();
+circle.Color = new DesignPattern.StructuralPattern.Bridge.Green();
+circle.Draw();
+Console.WriteLine("DesignPattern-StructuralPattern-Bridge --END--");
+Console.WriteLine();
+#endregion
