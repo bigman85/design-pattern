@@ -141,3 +141,19 @@ subject.Status = 99;
 Console.WriteLine("DesignPattern-StructuralPattern-Observer --END--");
 Console.WriteLine();
 #endregion
+
+#region Iterator Pattern
+Console.WriteLine("DesignPattern-StructuralPattern-Iterator");
+DesignPattern.BehaviorPattern.Iterator.Users users = new DesignPattern.BehaviorPattern.Iterator.Users();
+users.Add(new DesignPattern.BehaviorPattern.Iterator.User("Tom"));
+users.Add(new DesignPattern.BehaviorPattern.Iterator.User("David"));
+users.Add(new DesignPattern.BehaviorPattern.Iterator.User("Tony"));
+users.Add(new DesignPattern.BehaviorPattern.Iterator.User("Jacky"));
+
+for(var iterator = users.GetIterator(); iterator.HasNext(); )
+{
+    Console.WriteLine(iterator.Next().ToString());
+}
+Console.WriteLine("DesignPattern-StructuralPattern-Iterator --END--");
+Console.WriteLine();
+#endregion
