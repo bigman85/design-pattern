@@ -128,3 +128,16 @@ dirRoot.Info();
 Console.WriteLine("DesignPattern-StructuralPattern-Composite --END--");
 Console.WriteLine();
 #endregion
+
+
+
+#region Observer Pattern
+Console.WriteLine("DesignPattern-StructuralPattern-Observer");
+DesignPattern.BehaviorPattern.Observer.Subject subject = new DesignPattern.BehaviorPattern.Observer.Subject();
+DesignPattern.BehaviorPattern.Observer.ObserverOne observerOne = new DesignPattern.BehaviorPattern.Observer.ObserverOne(subject);
+DesignPattern.BehaviorPattern.Observer.ObserverTwo observer = new DesignPattern.BehaviorPattern.Observer.ObserverTwo(subject);
+subject.Status = 12;
+subject.Status = 99;
+Console.WriteLine("DesignPattern-StructuralPattern-Observer --END--");
+Console.WriteLine();
+#endregion
