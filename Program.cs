@@ -197,3 +197,18 @@ objectStructure.Accept(visitor2);
 Console.WriteLine("DesignPattern-BehaviorPattern-Visitor --END--");
 Console.WriteLine();
 #endregion
+
+#region Mediator Pattern
+Console.WriteLine("DesignPattern-BehaviorPattern-Visitor");
+DesignPattern.BehaviorPattern.Mediator.ConcreteMediator mediator = new ();
+DesignPattern.BehaviorPattern.Mediator.ConcreteColleague1 concreteColleague1 = new (mediator);
+DesignPattern.BehaviorPattern.Mediator.ConcreteColleague2 concreteColleague2 = new (mediator);
+mediator.concreteColleague1 = concreteColleague1;
+mediator.concreteColleague2 = concreteColleague2;
+
+concreteColleague1.Send("您吃了么？");
+concreteColleague2.Send("没呢，正想去您家蹭顿饭呢！");
+
+Console.WriteLine("DesignPattern-BehaviorPattern-Visitor --END--");
+Console.WriteLine();
+#endregion
