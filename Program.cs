@@ -212,3 +212,21 @@ concreteColleague2.Send("没呢，正想去您家蹭顿饭呢！");
 Console.WriteLine("DesignPattern-BehaviorPattern-Visitor --END--");
 Console.WriteLine();
 #endregion
+
+#region Interpreter Pattern
+Console.WriteLine("DesignPattern-BehaviorPattern-Interpreter");
+DesignPattern.BehaviorPattern.Interpreter.TerminalExpression robert = new ("Robert");
+DesignPattern.BehaviorPattern.Interpreter.TerminalExpression john = new ("John");
+DesignPattern.BehaviorPattern.Interpreter.TerminalExpression julie = new ("Julie");
+DesignPattern.BehaviorPattern.Interpreter.TerminalExpression married = new ("Married");
+DesignPattern.BehaviorPattern.Interpreter.OrExpression isMale = new (robert,john);
+DesignPattern.BehaviorPattern.Interpreter.AndExpression isMarriedWoman = new (julie,married);
+
+
+Console.WriteLine("John is male? " + isMale.Interpret("John"));
+Console.WriteLine("Julie is a married women? " + isMarriedWoman.Interpret("Married Julie"));
+
+Console.WriteLine("DesignPattern-BehaviorPattern-Interpreter --END--");
+Console.WriteLine();
+#endregion
+
