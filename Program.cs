@@ -178,4 +178,22 @@ Console.WriteLine(context.State);
 DesignPattern.BehaviorPattern.State.StopState stopState = new();
 stopState.DoAction(context);
 Console.WriteLine(context.State);
+Console.WriteLine("DesignPattern-BehaviorPattern-State --END--");
+Console.WriteLine();
+#endregion
+
+#region Visitor Pattern
+Console.WriteLine("DesignPattern-BehaviorPattern-Visitor");
+DesignPattern.BehaviorPattern.Visitor.ObjectStructure objectStructure = new ();
+objectStructure.Attach(new DesignPattern.BehaviorPattern.Visitor.ConcreteElementA());
+objectStructure.Attach(new DesignPattern.BehaviorPattern.Visitor.ConcreteElementB());
+
+DesignPattern.BehaviorPattern.Visitor.ConcreteVisitor1 visitor1 = new ();
+DesignPattern.BehaviorPattern.Visitor.ConcreteVisitor1 visitor2 = new ();
+
+objectStructure.Accept(visitor1);
+objectStructure.Accept(visitor2);
+
+Console.WriteLine("DesignPattern-BehaviorPattern-Visitor --END--");
+Console.WriteLine();
 #endregion
