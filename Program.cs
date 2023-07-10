@@ -56,6 +56,7 @@ Console.WriteLine(person1.ToString());
 var person2 = person1.Clone() as DesignPattern.CreationalPattern.Prototype.Person;
 Console.WriteLine("Cloned Person2 is ");
 Console.WriteLine(person2.ToString());
+Console.WriteLine(person2?.ToString());
 Console.WriteLine("DesignPattern-CreationalPattern-Prototype --END--");
 Console.WriteLine();
 #endregion
@@ -110,6 +111,20 @@ for (int i = 0; i < 20; i++)
     tmpCircle.Draw();
 }
 Console.WriteLine("DesignPattern-StructuralPattern-FlyWeight --END--");
+
+#region Template Method Pattern
+Console.WriteLine("DesignPattern-StructuralPattern-TemplateMethod");
+DesignPattern.BehaviorPattern.TemplateMethod.AbstractClass cb = new DesignPattern.BehaviorPattern.TemplateMethod.ConcreteClassB();
+cb.TemplateMethod();
+Console.WriteLine("DesignPattern-StructuralPattern-TemplateMethod --END--");
+Console.WriteLine();
+#endregion
+
+#region Adapter Pattern
+Console.WriteLine("DesignPattern-StructuralPattern-Adapter");
+DesignPattern.StructuralPattern.Adapter.Target target = new DesignPattern.StructuralPattern.Adapter.Adapter();
+target.Request();
+Console.WriteLine("DesignPattern-StructuralPattern-Adapter --END--");
 Console.WriteLine();
 #endregion
 
@@ -126,6 +141,40 @@ dirRoot.AddChild(dirLv1);
 
 dirRoot.Info();
 Console.WriteLine("DesignPattern-StructuralPattern-Composite --END--");
+#region Facade Pattern
+Console.WriteLine("DesignPattern-StructuralPattern-Facade");
+DesignPattern.StructuralPattern.Facade.FacadeClass facade = new DesignPattern.StructuralPattern.Facade.FacadeClass();
+facade.MethodA();
+facade.MethodB();
+Console.WriteLine("DesignPattern-StructuralPattern-Facade --END--");
+Console.WriteLine();
+#endregion
+
+#region Facade Pattern
+Console.WriteLine("DesignPattern-BehaviorPattern-ChainOfResponsibility");
+DesignPattern.BehaviorPattern.ChainOfResponsibility.FirstStepHandler firstStepHandler = new();
+DesignPattern.BehaviorPattern.ChainOfResponsibility.SecondStepHandler secondStepHandler = new();
+DesignPattern.BehaviorPattern.ChainOfResponsibility.ThridStepHandler thridStepHandler = new();
+
+firstStepHandler.NextHandler = secondStepHandler;
+secondStepHandler.NextHandler = thridStepHandler;
+
+firstStepHandler.Handle("#REQUEST#");
+Console.WriteLine("DesignPattern-BehaviorPattern-ChainOfResponsibility --END--");
+Console.WriteLine();
+#endregion
+
+#region Command Pattern
+Console.WriteLine("DesignPattern-BehaviorPattern-Command");
+DesignPattern.BehaviorPattern.Command.Stock stock = new();
+DesignPattern.BehaviorPattern.Command.BuyOrder buyOrder = new(stock);
+DesignPattern.BehaviorPattern.Command.SellOrder sellOrder = new(stock);
+DesignPattern.BehaviorPattern.Command.Broker broker = new();
+
+broker.TakeOrder(buyOrder);
+broker.TakeOrder(buyOrder);
+broker.TakeOrder(sellOrder);
+broker.TakeOrder(buyOrder);
 Console.WriteLine();
 #endregion
 
@@ -156,4 +205,10 @@ for(var iterator = users.GetIterator(); iterator.HasNext(); )
 }
 Console.WriteLine("DesignPattern-StructuralPattern-Iterator --END--");
 Console.WriteLine();
-#endregion
+#endregion#region Visitor Pattern
+Console.WriteLine("DesignPattern-BehaviorPattern-Visitor");
+DesignPattern.BehaviorPattern.Visitor.ObjectStructure objectStructure = new ();
+objectStructure.Attach(new DesignPattern.BehaviorPattern.Visitor.ConcreteElementA());
+objectStructure.Attach(new DesignPattern.BehaviorPattern.Visitor.ConcreteElementB());
+
+DesignPattern.BehaviorPattern.Visitor.ConcreteVisitor1 visitor1 = new ();

@@ -33,7 +33,12 @@ namespace DesignPattern.CreationalPattern.Builder
             private string nickName;
             private int? age;
 
-            public UserBuilder() { }
+            public UserBuilder() { 
+                this.name = "NO-NAME";
+                this.password = "NO-PASSWORD";
+                this.nickName = "NO-NICKNAME";
+                this.age = null;
+            }
 
             public UserBuilder Name(string name){
                 this.name = name;
