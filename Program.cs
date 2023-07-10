@@ -55,7 +55,6 @@ Console.WriteLine("Person1 is ");
 Console.WriteLine(person1.ToString());
 var person2 = person1.Clone() as DesignPattern.CreationalPattern.Prototype.Person;
 Console.WriteLine("Cloned Person2 is ");
-Console.WriteLine(person2.ToString());
 Console.WriteLine(person2?.ToString());
 Console.WriteLine("DesignPattern-CreationalPattern-Prototype --END--");
 Console.WriteLine();
@@ -175,6 +174,29 @@ broker.TakeOrder(buyOrder);
 broker.TakeOrder(buyOrder);
 broker.TakeOrder(sellOrder);
 broker.TakeOrder(buyOrder);
+broker.TakeOrder(sellOrder);
+
+broker.PlaceOrders();
+
+Console.WriteLine("DesignPattern-BehaviorPattern-Command --END--");
+Console.WriteLine();
+#endregion
+
+#region Memento Pattern
+Console.WriteLine("DesignPattern-BehaviorPattern-Memento");
+DesignPattern.BehaviorPattern.Memento.Originator originator = new();
+originator.State = "ON";
+originator.Show();
+
+DesignPattern.BehaviorPattern.Memento.Caretaker caretaker = new();
+caretaker.memento = originator.CreateMemento();
+
+originator.State = "OFF";
+originator.Show();
+ 
+originator.SetMemento(caretaker.memento);
+originator.Show();
+Console.WriteLine("DesignPattern-BehaviorPattern-Memento --END--");
 Console.WriteLine();
 #endregion
 
@@ -205,10 +227,66 @@ for(var iterator = users.GetIterator(); iterator.HasNext(); )
 }
 Console.WriteLine("DesignPattern-StructuralPattern-Iterator --END--");
 Console.WriteLine();
-#endregion#region Visitor Pattern
+#endregion
+#region State Pattern
+Console.WriteLine("DesignPattern-BehaviorPattern-State");
+DesignPattern.BehaviorPattern.State.Context context = new ();
+DesignPattern.BehaviorPattern.State.StartState startState = new();
+startState.DoAction(context);
+Console.WriteLine(context.State);
+
+DesignPattern.BehaviorPattern.State.StopState stopState = new();
+stopState.DoAction(context);
+Console.WriteLine(context.State);
+Console.WriteLine("DesignPattern-BehaviorPattern-State --END--");
+Console.WriteLine();
+#endregion
+
+#region Visitor Pattern
 Console.WriteLine("DesignPattern-BehaviorPattern-Visitor");
 DesignPattern.BehaviorPattern.Visitor.ObjectStructure objectStructure = new ();
 objectStructure.Attach(new DesignPattern.BehaviorPattern.Visitor.ConcreteElementA());
 objectStructure.Attach(new DesignPattern.BehaviorPattern.Visitor.ConcreteElementB());
 
 DesignPattern.BehaviorPattern.Visitor.ConcreteVisitor1 visitor1 = new ();
+DesignPattern.BehaviorPattern.Visitor.ConcreteVisitor1 visitor2 = new ();
+
+objectStructure.Accept(visitor1);
+objectStructure.Accept(visitor2);
+
+Console.WriteLine("DesignPattern-BehaviorPattern-Visitor --END--");
+Console.WriteLine();
+#endregion
+
+#region Mediator Pattern
+Console.WriteLine("DesignPattern-BehaviorPattern-Visitor");
+DesignPattern.BehaviorPattern.Mediator.ConcreteMediator mediator = new ();
+DesignPattern.BehaviorPattern.Mediator.ConcreteColleague1 concreteColleague1 = new (mediator);
+DesignPattern.BehaviorPattern.Mediator.ConcreteColleague2 concreteColleague2 = new (mediator);
+mediator.concreteColleague1 = concreteColleague1;
+mediator.concreteColleague2 = concreteColleague2;
+
+concreteColleague1.Send("您吃了么？");
+concreteColleague2.Send("没呢，正想去您家蹭顿饭呢！");
+
+Console.WriteLine("DesignPattern-BehaviorPattern-Visitor --END--");
+Console.WriteLine();
+#endregion
+
+#region Interpreter Pattern
+Console.WriteLine("DesignPattern-BehaviorPattern-Interpreter");
+DesignPattern.BehaviorPattern.Interpreter.TerminalExpression robert = new ("Robert");
+DesignPattern.BehaviorPattern.Interpreter.TerminalExpression john = new ("John");
+DesignPattern.BehaviorPattern.Interpreter.TerminalExpression julie = new ("Julie");
+DesignPattern.BehaviorPattern.Interpreter.TerminalExpression married = new ("Married");
+DesignPattern.BehaviorPattern.Interpreter.OrExpression isMale = new (robert,john);
+DesignPattern.BehaviorPattern.Interpreter.AndExpression isMarriedWoman = new (julie,married);
+
+
+Console.WriteLine("John is male? " + isMale.Interpret("John"));
+Console.WriteLine("Julie is a married women? " + isMarriedWoman.Interpret("Married Julie"));
+
+Console.WriteLine("DesignPattern-BehaviorPattern-Interpreter --END--");
+Console.WriteLine();
+#endregion
+
